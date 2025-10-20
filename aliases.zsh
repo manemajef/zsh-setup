@@ -19,3 +19,4 @@ alias zconf="cd && nvim ~/.zshrc"
 alias vzsh="cd ~/.zsh && nvim"
 alias cdsk='cd ~/Desktop'
 alias cdoc='cd ~/Documents'
+alias ghstconf='cd ~/Library/Application\ Support/com.mitchellh.ghostty && nvim config'
