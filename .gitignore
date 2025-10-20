@@ -1,0 +1,22 @@
+# Secrets and sensitive data
+secret.zsh
+
+# Generated/cache files
+.zcompdump*
+*.zwc
+
+# Plugin manager generated files
+.zsh_plugins.zsh
+
+# Archive/backup directories
+archive/
+
+# System files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Symlinks (users will create their own)
+zshrc
+links/
