@@ -18,5 +18,5 @@ archive/
 *~
 
 # Symlinks (users will create their own)
-# zshrc
-# links/
+zshrc
+links/

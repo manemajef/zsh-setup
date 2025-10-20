@@ -43,6 +43,43 @@ exec zsh
 
 **Active Config:** `~/.zshrc` (symlinked to `~/.zsh/zshrc`)
 
+### .zshrc
+
+```zsh
+## ====== PATHS =========
+## set youre path variables (npm, brew, python, tex etc..)
+# example:
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
+
+# =========================
+# FRAMEWORKS
+# only leave on framework on, other must be commented out !
+# =========================
+
+# ZINIT
+# source ~/.zsh/frameworks/zinit.zsh
+
+# OMZ
+# source ~/.zsh/frameworks/omz.zsh
+
+# ANTIDOTE
+source ~/.zsh/frameworks/antidote.zsh
+
+
+# starship PROMPT
+eval "$(starship init zsh)"
+
+# =======================
+# load .zsh (loading every root *.zsh file in ~/.zsh/* )
+# =======================
+for file in ~/.zsh/*.zsh; do
+  source "$file"
+done
+
+
+```
+
 ---
 
 ## Frameworks
@@ -54,16 +91,19 @@ exec zsh
 **Best For:** Speed without configuration overhead
 
 **Setup:**
+
 1. Install: `brew install antidote`
 2. Edit `~/.zsh_plugins.txt` to add/remove plugins
 3. Reload shell - auto-regenerates on changes
 
 **Config Files:**
+
 - `~/.zsh/frameworks/antidote.zsh` - Framework loader
 - `~/.zsh_plugins.txt` - Plugin list (plain text)
 - `~/.zsh_plugins.zsh` - Auto-generated static file
 
 **To Activate:**
+
 ```zsh
 # In ~/.zsh/zshrc, uncomment:
 source ~/.zsh/frameworks/antidote.zsh
@@ -82,19 +122,23 @@ source ~/.zsh/frameworks/antidote.zsh
 **Best For:** Power users who want maximum control
 
 **Setup:**
+
 1. Auto-installs on first run
 2. Edit `~/.zsh/frameworks/zinit.zsh` to configure
 3. Supports turbo mode, lazy loading, ice modifiers
 
 **Config Files:**
+
 - `~/.zsh/frameworks/zinit.zsh` - All configuration in one file
 
 **Features:**
+
 - Turbo mode for deferred loading
 - Fine-grained plugin control
 - Fastest possible startup
 
 **To Activate:**
+
 ```zsh
 # In ~/.zsh/zshrc, uncomment:
 source ~/.zsh/frameworks/zinit.zsh
@@ -111,15 +155,18 @@ source ~/.zsh/frameworks/zinit.zsh
 **Best For:** Beginners, out-of-the-box experience
 
 **Setup:**
+
 1. Install: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 2. Edit `~/.zsh/frameworks/omz.zsh` to configure plugins
 3. Handles compinit automatically
 
 **Config Files:**
+
 - `~/.zsh/frameworks/omz.zsh` - Plugin list and theme
 - `~/.oh-my-zsh/` - OMZ installation directory
 
 **To Activate:**
+
 ```zsh
 # In ~/.zsh/zshrc, uncomment:
 source ~/.zsh/frameworks/omz.zsh
@@ -137,6 +184,7 @@ source ~/.zsh/frameworks/omz.zsh
 **Config:** `~/.config/starship.toml`
 
 **To Change Prompt:**
+
 ```zsh
 # In ~/.zsh/zshrc, comment out:
 # eval "$(starship init zsh)"
@@ -149,22 +197,29 @@ source ~/.zsh/frameworks/omz.zsh
 ## Common Tasks
 
 ### Add a Plugin (Antidote)
+
 Edit `~/.zsh_plugins.txt`:
+
 ```txt
 # Add new plugin
 user/repo
 ohmyzsh/ohmyzsh path:plugins/plugin-name
 ```
+
 Open new shell - auto-regenerates
 
 ### Add a Plugin (Zinit)
+
 Edit `~/.zsh/frameworks/zinit.zsh`:
+
 ```zsh
 zinit light user/repo
 ```
 
 ### Add a Plugin (OMZ)
+
 Edit `~/.zsh/frameworks/omz.zsh`:
+
 ```zsh
 plugins=(
   git
@@ -173,6 +228,7 @@ plugins=(
 ```
 
 ### Reload Configuration
+
 ```zsh
 exec zsh  # Clean reload (recommended)
 # or
@@ -180,12 +236,15 @@ source ~/.zshrc  # May show harmless warnings
 ```
 
 ### Measure Startup Time
+
 ```zsh
 time zsh -i -c exit
 ```
 
 ### Add Aliases/Functions
+
 Edit files in `~/.zsh/`:
+
 - `aliases.zsh` - Command shortcuts
 - `utils.zsh` - Custom functions
 - `scripts.zsh` - Complex functions
@@ -221,8 +280,8 @@ Edit files in `~/.zsh/`:
 ## Expected Performance
 
 | Framework | Load Time | Setup Complexity | Flexibility |
-|-----------|-----------|------------------|-------------|
-| Zinit     | 50-70ms   | High ⭐⭐⭐       | Very High   |
+| --------- | --------- | ---------------- | ----------- |
+| Zinit     | 50-70ms   | High ⭐⭐⭐      | Very High   |
 | Antidote  | 80-100ms  | Low ⭐           | Medium      |
 | OMZ       | 300-500ms | Very Low         | Low         |
 
