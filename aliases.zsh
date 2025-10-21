@@ -7,6 +7,7 @@ alias j="zoxide query -i"
 alias zi='cd "$(zoxide query -i)"'
 alias cdi='zoxide query --interactive'
 alias cat='bat'
+# alias z='zoxide'
 # Neovim profiles
 alias nvchad="NVIM_APPNAME=nvim.chad nvim"
 alias asvim="NVIM_APPNAME=nvim.astro nvim"
@@ -20,3 +21,6 @@ alias vzsh="cd ~/.zsh && nvim"
 alias cdsk='cd ~/Desktop'
 alias cdoc='cd ~/Documents'
 alias ghstconf='cd ~/Library/Application\ Support/com.mitchellh.ghostty && nvim config'
+alias moodle-desk='open ~/Scripts/open-moodle/dist/Moodle\ Desktop.app'
+# alias moodle='cd ~/scripts/open-moodle && /.venv/bin/python3 -m app.main'
+alias moodle='~/Scripts/open-moodle/.venv/bin/python3 ~/Scripts/open-moodle/main.py'
