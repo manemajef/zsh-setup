@@ -24,3 +24,4 @@ alias ghstconf='cd ~/Library/Application\ Support/com.mitchellh.ghostty && nvim 
 alias moodle-desk='open ~/Scripts/open-moodle/dist/Moodle\ Desktop.app'
 # alias moodle='cd ~/scripts/open-moodle && /.venv/bin/python3 -m app.main'
 alias moodle='~/Scripts/open-moodle/.venv/bin/python3 ~/Scripts/open-moodle/main.py'
+alias semester='open ~/obsidian/TAU'

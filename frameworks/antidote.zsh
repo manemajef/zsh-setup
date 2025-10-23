@@ -1,7 +1,10 @@
 
 # --- ANTIDOTE (plugin manager) ------------------------------------------------
+
 # Antidote handles loading plugins and completions
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+# Silence OMZ git.zsh zstyle output
+zstyle ':omz:alpha:lib:git' async-prompt no
 
 # Auto-regenerate plugins if .zsh_plugins.txt is newer than .zsh_plugins.zsh
 zsh_plugins_txt="${ZDOTDIR:-$HOME}/.zsh_plugins.txt"

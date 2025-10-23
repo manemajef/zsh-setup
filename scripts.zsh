@@ -39,28 +39,3 @@ crun() {
   echo "▶️  Running $out_path"
   "$out_path"
 }
-
-# crun() {
-#   # Usage: crun file.c [output]
-#   # Example: crun main.c        → compiles to ./.out
-#   #          crun main.c synth  → compiles to ./synth
-#
-#   local src="$1"
-#   local out="${2:-.out}"
-#
-#   if [[ -z "$src" ]]; then
-#     echo "Usage: crun <source.c> [output]"
-#     return 1
-#   fi
-#
-#   if ! [[ -f "$src" ]]; then
-#     echo "Error: '$src' not found"
-#     return 1
-#   fi
-#
-#   echo "🔧 Compiling $src → $out"
-#   gcc "$src" -o "$out" || { echo "❌ Compilation failed"; return 1; }
-#
-#   echo "▶️  Running $out"
-#   "./$out"
-# }
