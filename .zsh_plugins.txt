@@ -1,1 +1,38 @@
-/Users/rotemsemah/.zsh_plugins.txt
+jeffreyste/zsh-vi-mode
+
+mattmc3/ez-compinit
+zsh-users/zsh-completions kind:fpath path:src
+
+# Completions
+zsh-users/zsh-completions
+belak/zsh-utils path:completion
+
+# Lightweight utilities (faster than OMZ equivalents)
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:prompt
+belak/zsh-utils path:utility
+
+# Essential OMZ (only what's needed for git plugins)
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib/git.zsh
+ohmyzsh/ohmyzsh path:lib/key-bindings.zsh  # Needed for proper completion keybindings
+ohmyzsh/ohmyzsh path:lib/termsupport.zsh
+# ohmyzsh/ohmyzsh path:plugins/magic-enter
+
+# plugins
+MichaelAquilina/zsh-you-should-use
+rupa/z
+
+# OMZ Plugins
+# ohmyzsh/ohmyzsh path:plugins/fzf  # Commented out for speed
+ohmyzsh/ohmyzsh path:plugins/dirhistory
+ohmyzsh/ohmyzsh path:plugins/git
+# ohmyzsh/ohmyzsh path:plugins/sudo
+
+# Syntax and suggestions (load last)
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+
+mattmc3/zfunctions

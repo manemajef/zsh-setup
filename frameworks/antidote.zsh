@@ -1,10 +1,11 @@
 
 # --- ANTIDOTE (plugin manager) ------------------------------------------------
 
+# Silence OMZ git.zsh zstyle output (must be set BEFORE loading plugins)
+zstyle ':omz:alpha:lib:git' async-prompt no
+
 # Antidote handles loading plugins and completions
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-# Silence OMZ git.zsh zstyle output
-zstyle ':omz:alpha:lib:git' async-prompt no
 
 # Auto-regenerate plugins if .zsh_plugins.txt is newer than .zsh_plugins.zsh
 zsh_plugins_txt="${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
@@ -16,7 +17,10 @@ if [[ ! -e "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" ]]; t
 fi
 
 # Load plugins (static mode for speed)
-source "$zsh_plugins_zsh"
+# Suppress spurious _style=no output from OMZ git.zsh
+{
+  source "$zsh_plugins_zsh"
+} 2>&1 | grep -v "^_style=" || true
 
 # --- Optimized compinit with daily caching ---
 # Only rebuild completion cache once per day for faster startup
