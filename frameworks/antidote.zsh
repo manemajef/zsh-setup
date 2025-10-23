@@ -17,16 +17,12 @@ if [[ ! -e "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" ]]; t
 fi
 
 # Load plugins (static mode for speed)
-# Suppress spurious _style=no output from OMZ git.zsh
-{
-  source "$zsh_plugins_zsh"
-} 2>&1 | grep -v "^_style=" || true
+source "$zsh_plugins_zsh"
 
 # --- Optimized compinit with daily caching ---
 # Only rebuild completion cache once per day for faster startup
-autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
+
+
+# --- History Substring Search Key Bindings ---
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
