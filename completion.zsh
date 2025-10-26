@@ -7,7 +7,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Group and format completion results
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
+# zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
 zstyle ':completion:*:warnings' format '%F{red}-- no matches found --%f'
 
 # Case-insensitive completion

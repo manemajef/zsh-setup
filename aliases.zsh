@@ -25,3 +25,7 @@ alias moodle-desk='open ~/Scripts/open-moodle/dist/Moodle\ Desktop.app'
 # alias moodle='cd ~/scripts/open-moodle && /.venv/bin/python3 -m app.main'
 alias moodle='~/Scripts/open-moodle/.venv/bin/python3 ~/Scripts/open-moodle/main.py'
 alias semester='open ~/obsidian/TAU'
+hash -d icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+hash -d vault="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+alias aspace='df -h / | tail -1 | awk "{print \$4}"'
+alias soffice-convert='soffice --headless --convert-to'
