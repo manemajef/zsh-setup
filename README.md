@@ -8,8 +8,8 @@ Modular Zsh setup supporting multiple plugin managers with optimized performance
 # Clone this repo
 git clone https://github.com/YOUR_USERNAME/zsh-config.git ~/.zsh
 
-# Create symlink to zshrc
-ln -sf ~/.zsh/zshrc ~/.zshrc
+# Run setup to create symlinks (backs up existing files)
+~/.zsh/setup.sh
 
 # Copy example secrets file and edit it
 cp ~/.zsh/secret.zsh.example ~/.zsh/secret.zsh
@@ -18,18 +18,18 @@ cp ~/.zsh/secret.zsh.example ~/.zsh/secret.zsh
 # Install Antidote (recommended)
 brew install antidote
 
-# Create plugin list file
-cp ~/.zsh_plugins.txt.example ~/.zsh_plugins.txt  # Or use existing one
-
 # Reload shell
 exec zsh
 ```
+
+**Note:** The `setup.sh` script will back up any existing `~/.zshrc` or `~/.zsh_plugins.txt` files with a timestamp suffix (e.g., `.zshrc.bak.20251103_143022`) before creating symlinks.
 
 ## Setup Overview
 
 ```
 ~/.zsh/
-├── zshrc              # Symlink to ~/.zshrc (edit here)
+├── zshrc              # Main config (symlinked from ~/.zshrc)
+├── plugins.txt        # Plugin list (symlinked from ~/.zsh_plugins.txt)
 ├── frameworks/        # Plugin manager configs
 │   ├── antidote.zsh   # Fast, simple (ACTIVE)
 │   ├── zinit.zsh      # Fastest, complex
@@ -41,7 +41,21 @@ exec zsh
 └── secret.zsh         # Environment variables (gitignored)
 ```
 
-**Active Config:** `~/.zshrc` (symlinked to `~/.zsh/zshrc`)
+**Active Config:** `~/.zshrc` and `~/.zsh_plugins.txt` in `$HOME` are symlinks to files in `~/.zsh/`
+
+### Symlink Structure
+
+The actual files live in the `~/.zsh/` directory (this repo), and are linked from your home directory:
+
+```bash
+# Configuration
+~/.zshrc -> ~/.zsh/zshrc
+
+# Plugin list for Antidote
+~/.zsh_plugins.txt -> ~/.zsh/plugins.txt
+```
+
+**Why:** Keeps your entire zsh config in one git-tracked directory, while maintaining standard zsh locations in `$HOME`.
 
 ### .zshrc
 
@@ -93,13 +107,14 @@ done
 **Setup:**
 
 1. Install: `brew install antidote`
-2. Edit `~/.zsh_plugins.txt` to add/remove plugins
+2. Edit `~/.zsh_plugins.txt` (symlink to `~/.zsh/plugins.txt`) to add/remove plugins
 3. Reload shell - auto-regenerates on changes
 
 **Config Files:**
 
 - `~/.zsh/frameworks/antidote.zsh` - Framework loader
-- `~/.zsh_plugins.txt` - Plugin list (plain text)
+- `~/.zsh/plugins.txt` - Plugin list source file (in repo)
+- `~/.zsh_plugins.txt` - Symlink to `~/.zsh/plugins.txt`
 - `~/.zsh_plugins.zsh` - Auto-generated static file
 
 **To Activate:**
@@ -198,7 +213,7 @@ source ~/.zsh/frameworks/omz.zsh
 
 ### Add a Plugin (Antidote)
 
-Edit `~/.zsh_plugins.txt`:
+Edit `~/.zsh_plugins.txt` (symlink to `~/.zsh/plugins.txt`):
 
 ```txt
 # Add new plugin
@@ -206,7 +221,7 @@ user/repo
 ohmyzsh/ohmyzsh path:plugins/plugin-name
 ```
 
-Open new shell - auto-regenerates
+Open new shell - auto-regenerates plugin bundle
 
 ### Add a Plugin (Zinit)
 

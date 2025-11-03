@@ -1,9 +1,5 @@
-
-# --- ANTIDOTE (plugin manager) ------------------------------------------------
-
 # Silence OMZ git.zsh zstyle output (must be set BEFORE loading plugins)
-zstyle ':omz:alpha:lib:git' async-prompt no
-
+# zstyle ':omz:alpha:lib:git' async-prompt no
 # Antidote handles loading plugins and completions
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
