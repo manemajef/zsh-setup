@@ -1,24 +1,27 @@
 
-source ~/.zsh/frameworks/antidote.zsh
+  # ============================================
+  # PLUGIN FRAMEWORK
+  # ============================================
+  source ~/.zsh/antidote/antidote.zsh
 
-# ================
-# load auto complete
-# =================
-autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
+  # ============================================
+  # COMPLETION SYSTEM
+  # ============================================
+  autoload -Uz compinit
+  if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+    compinit
+  else
+    compinit -C
+  fi
 
-# eval "$(starship init zsh)"
+  # ============================================
+  # LOAD CUSTOM CONFIGS
+  # ============================================
+  # Core configs (explicit - visible in root)
+  [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
+  [[ -f ~/.zsh/secret.zsh ]] && source ~/.zsh/secret.zsh
 
-# load .zsh
-for file in ~/.zsh/*.zsh; do
-  source "$file"
-done
-for file in ~/.zsh/plugins/*.zsh; do
-  source "$file"
-
-
-
+  # Plugin-specific configs (auto-loaded)
+  for file in ~/.zsh/plugins/*.zsh; do
+    [[ -f "$file" ]] && source "$file"
+  done

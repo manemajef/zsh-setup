@@ -8,9 +8,6 @@ Modular Zsh setup supporting multiple plugin managers with optimized performance
 # Clone this repo
 git clone https://github.com/YOUR_USERNAME/zsh-config.git ~/.zsh
 
-# Run setup to create symlinks (backs up existing files)
-~/.zsh/setup.sh
-
 # Copy example secrets file and edit it
 cp ~/.zsh/secret.zsh.example ~/.zsh/secret.zsh
 # Edit ~/.zsh/secret.zsh with your API keys
@@ -18,202 +15,100 @@ cp ~/.zsh/secret.zsh.example ~/.zsh/secret.zsh
 # Install Antidote (recommended)
 brew install antidote
 
+# Add this line to your ~/.zshrc
+echo "source ~/.zsh/zshrc" >> ~/.zshrc
+
 # Reload shell
 exec zsh
 ```
 
-**Note:** The `setup.sh` script will back up any existing `~/.zshrc` or `~/.zsh_plugins.txt` files with a timestamp suffix (e.g., `.zshrc.bak.20251103_143022`) before creating symlinks.
+**Note:** The main entry point is `~/.zsh/zshrc` which must be sourced from your `~/.zshrc` file.
 
 ## Setup Overview
 
 ```
 ~/.zsh/
-├── zshrc              # Main config (symlinked from ~/.zshrc)
-├── plugins.txt        # Plugin list (symlinked from ~/.zsh_plugins.txt)
-├── frameworks/        # Plugin manager configs
-│   ├── antidote.zsh   # Fast, simple (ACTIVE)
+├── zshrc              # Main config (sourced from ~/.zshrc)
+├── antidote/          # Antidote plugin manager (ACTIVE)
+│   ├── antidote.zsh   # Framework loader
+│   ├── plugins.txt    # Plugin list
+│   └── plugins.zsh    # Auto-generated bundle
+├── frameworks/        # Alternative plugin managers (NOT loaded)
 │   ├── zinit.zsh      # Fastest, complex
 │   └── omz.zsh        # Easiest, slowest
+├── plugins/           # Plugin-specific configurations
+│   ├── completion.zsh # Tab completion styling & behavior
+│   ├── crun.zsh       # C file compile-and-run function
+│   ├── pg.zsh         # PostgreSQL service manager
+│   └── yazy.zsh       # Yazi file manager integration
 ├── aliases.zsh        # Command aliases
-├── completion.zsh     # Tab completion styling
-├── scripts.zsh        # Custom functions
-├── utils.zsh          # Utility functions
-└── secret.zsh         # Environment variables (gitignored)
+├── secret.zsh         # Environment variables (gitignored)
+└── archive/           # Backup/unused configs
 ```
 
-**Active Config:** `~/.zshrc` and `~/.zsh_plugins.txt` in `$HOME` are symlinks to files in `~/.zsh/`
+**Note:** The `frameworks/` folder contains alternative plugin manager configurations that are currently **not loaded**. Only `antidote/` is active.
 
-### Symlink Structure
+### Configuration Structure
 
-The actual files live in the `~/.zsh/` directory (this repo), and are linked from your home directory:
-
-```bash
-# Configuration
-~/.zshrc -> ~/.zsh/zshrc
-
-# Plugin list for Antidote
-~/.zsh_plugins.txt -> ~/.zsh/plugins.txt
-```
-
-**Why:** Keeps your entire zsh config in one git-tracked directory, while maintaining standard zsh locations in `$HOME`.
-
-### .zshrc
+Your main `~/.zshrc` file should simply source the modular config:
 
 ```zsh
-## ====== PATHS =========
-## set youre path variables (npm, brew, python, tex etc..)
-# example:
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
-
-# =========================
-# FRAMEWORKS
-# only leave on framework on, other must be commented out !
-# =========================
-
-# ZINIT
-# source ~/.zsh/frameworks/zinit.zsh
-
-# OMZ
-# source ~/.zsh/frameworks/omz.zsh
-
-# ANTIDOTE
-source ~/.zsh/frameworks/antidote.zsh
-
-
-# starship PROMPT
-eval "$(starship init zsh)"
-
-# =======================
-# load .zsh (loading every root *.zsh file in ~/.zsh/* )
-# =======================
-for file in ~/.zsh/*.zsh; do
-  source "$file"
-done
-
-
+# In ~/.zshrc (your home directory)
+source ~/.zsh/zshrc
 ```
+
+The actual configuration lives in `~/.zsh/zshrc`, which handles:
+
+1. **PATH setup** - Add your custom paths (npm, brew, python, etc.)
+2. **Plugin framework** - Loads `~/.zsh/antidote/antidote.zsh` (active)
+3. **Completion system** - Configures zsh completion with caching
+4. **Custom configs** - Auto-loads:
+   - `~/.zsh/aliases.zsh` - Command shortcuts
+   - `~/.zsh/secret.zsh` - Environment variables (gitignored)
+   - `~/.zsh/plugins/*.zsh` - Plugin-specific configurations
+
+**Plugin configurations** (in `~/.zsh/plugins/`):
+
+- Add any plugin-specific settings or custom functions here
+- Files are auto-loaded by `~/.zsh/zshrc`
+- Examples: completion styling, custom functions, tool integrations
 
 ---
 
-## Frameworks
+## Plugin Manager
 
 ### Antidote (Current - ⚡ Fast & Simple)
 
-**Load Time:** ~80-100ms
+**Load Time:** ~110-115ms
 **Complexity:** Low
 **Best For:** Speed without configuration overhead
 
 **Setup:**
 
 1. Install: `brew install antidote`
-2. Edit `~/.zsh_plugins.txt` (symlink to `~/.zsh/plugins.txt`) to add/remove plugins
-3. Reload shell - auto-regenerates on changes
+2. Edit `~/.zsh/antidote/plugins.txt` to add/remove plugins
+3. Reload shell - auto-regenerates `plugins.zsh` on changes
 
 **Config Files:**
 
-- `~/.zsh/frameworks/antidote.zsh` - Framework loader
-- `~/.zsh/plugins.txt` - Plugin list source file (in repo)
-- `~/.zsh_plugins.txt` - Symlink to `~/.zsh/plugins.txt`
-- `~/.zsh_plugins.zsh` - Auto-generated static file
+- `~/.zsh/antidote/antidote.zsh` - Framework loader (currently active)
+- `~/.zsh/antidote/plugins.txt` - Plugin list (tracked in git)
+- `~/.zsh/antidote/plugins.zsh` - Auto-generated static bundle
 
-**To Activate:**
+**Alternative Managers** (in `~/.zsh/frameworks/` - not currently loaded):
 
-```zsh
-# In ~/.zsh/zshrc, uncomment:
-source ~/.zsh/frameworks/antidote.zsh
+- `zinit.zsh` - Fastest (50-70ms) but complex setup
+- `omz.zsh` - Easiest (300-500ms) but slowest
 
-# Comment out others:
-# source ~/.zsh/frameworks/zinit.zsh
-# source ~/.zsh/frameworks/omz.zsh
-```
-
----
-
-### Zinit (⚡⚡ Fastest - Advanced)
-
-**Load Time:** ~50-70ms
-**Complexity:** High
-**Best For:** Power users who want maximum control
-
-**Setup:**
-
-1. Auto-installs on first run
-2. Edit `~/.zsh/frameworks/zinit.zsh` to configure
-3. Supports turbo mode, lazy loading, ice modifiers
-
-**Config Files:**
-
-- `~/.zsh/frameworks/zinit.zsh` - All configuration in one file
-
-**Features:**
-
-- Turbo mode for deferred loading
-- Fine-grained plugin control
-- Fastest possible startup
-
-**To Activate:**
-
-```zsh
-# In ~/.zsh/zshrc, uncomment:
-source ~/.zsh/frameworks/zinit.zsh
-
-# Comment out others
-```
-
----
-
-### Oh My Zsh (🐌 Slow - Beginner Friendly)
-
-**Load Time:** ~300-500ms
-**Complexity:** Very Low
-**Best For:** Beginners, out-of-the-box experience
-
-**Setup:**
-
-1. Install: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-2. Edit `~/.zsh/frameworks/omz.zsh` to configure plugins
-3. Handles compinit automatically
-
-**Config Files:**
-
-- `~/.zsh/frameworks/omz.zsh` - Plugin list and theme
-- `~/.oh-my-zsh/` - OMZ installation directory
-
-**To Activate:**
-
-```zsh
-# In ~/.zsh/zshrc, uncomment:
-source ~/.zsh/frameworks/omz.zsh
-
-# Comment out others
-```
-
----
-
-## Prompt
-
-**Current:** Starship (cross-shell prompt)
-
-**Load Time:** ~5-10ms
-**Config:** `~/.config/starship.toml`
-
-**To Change Prompt:**
-
-```zsh
-# In ~/.zsh/zshrc, comment out:
-# eval "$(starship init zsh)"
-
-# Add alternative (e.g., Powerlevel10k, Pure, etc.)
-```
+To switch frameworks, edit `~/.zsh/zshrc` to source a different manager.
 
 ---
 
 ## Common Tasks
 
-### Add a Plugin (Antidote)
+### Add a Plugin
 
-Edit `~/.zsh_plugins.txt` (symlink to `~/.zsh/plugins.txt`):
+Edit `~/.zsh/antidote/plugins.txt`:
 
 ```txt
 # Add new plugin
@@ -221,33 +116,41 @@ user/repo
 ohmyzsh/ohmyzsh path:plugins/plugin-name
 ```
 
-Open new shell - auto-regenerates plugin bundle
+Reload shell - auto-regenerates plugin bundle
 
-### Add a Plugin (Zinit)
+### Add Plugin Configuration
 
-Edit `~/.zsh/frameworks/zinit.zsh`:
-
-```zsh
-zinit light user/repo
-```
-
-### Add a Plugin (OMZ)
-
-Edit `~/.zsh/frameworks/omz.zsh`:
+Create or edit files in `~/.zsh/plugins/`:
 
 ```zsh
-plugins=(
-  git
-  your-new-plugin
-)
+# Example: ~/.zsh/plugins/myconfig.zsh
+# Plugin-specific settings or custom functions
+export MY_PLUGIN_VAR="value"
 ```
+
+Files in `plugins/` are auto-loaded by `~/.zsh/zshrc`
+
+### Add Aliases/Functions
+
+Edit `~/.zsh/aliases.zsh`:
+
+```zsh
+alias ll='ls -lah'
+alias gs='git status'
+```
+
+### Modify Core Config
+
+Edit `~/.zsh/zshrc` for:
+
+- PATH modifications
+- Switching plugin managers
+- Core zsh settings
 
 ### Reload Configuration
 
 ```zsh
 exec zsh  # Clean reload (recommended)
-# or
-source ~/.zshrc  # May show harmless warnings
 ```
 
 ### Measure Startup Time
@@ -256,48 +159,34 @@ source ~/.zshrc  # May show harmless warnings
 time zsh -i -c exit
 ```
 
-### Add Aliases/Functions
-
-Edit files in `~/.zsh/`:
-
-- `aliases.zsh` - Command shortcuts
-- `utils.zsh` - Custom functions
-- `scripts.zsh` - Complex functions
-
 ---
 
-## Performance Tips
+## Plugin Configurations
 
-1. **Use Antidote/Zinit** for speed (not OMZ)
-2. **Remove unused plugins** from your plugin list
-3. **Enable compinit caching** (already configured)
-4. **Avoid loading entire OMZ lib** - load only specific files needed
-5. **Measure before/after** when adding plugins
+Files in `~/.zsh/plugins/` provide plugin-specific settings:
+
+- **`completion.zsh`** - Tab completion styling, menu selection, fuzzy matching, case-insensitive completion
+- **`crun.zsh`** - Compile and run C files with `crun file.c` (outputs to `./out/`)
+- **`pg.zsh`** - PostgreSQL service control with `pg start|stop|status`
+- **`yazy.zsh`** - Yazi file manager integration (changes directory on exit)
+
+Add your own `.zsh` files here for custom tool integrations or plugin settings.
 
 ---
 
 ## Troubleshooting
 
 **Problem:** Plugins not loading
-**Solution:** Regenerate with `antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh`
+**Solution:** Regenerate with `antidote bundle < ~/.zsh/antidote/plugins.txt > ~/.zsh/antidote/plugins.zsh`
 
 **Problem:** Slow startup
-**Solution:** Run `time zsh -i -c exit` and remove heavy plugins
+**Solution:** Run `time zsh -i -c exit` and remove heavy plugins from `plugins.txt`
 
-**Problem:** Tab completion not highlighting
-**Solution:** Check `completion.zsh` is loaded
-
-**Problem:** `_style=''` output when sourcing
-**Solution:** Use `exec zsh` instead of `source ~/.zshrc`
+**Problem:** Config not loading
+**Solution:** Ensure `source ~/.zsh/zshrc` is in your `~/.zshrc`
 
 ---
 
-## Expected Performance
+## Performance
 
-| Framework | Load Time | Setup Complexity | Flexibility |
-| --------- | --------- | ---------------- | ----------- |
-| Zinit     | 50-70ms   | High ⭐⭐⭐      | Very High   |
-| Antidote  | 80-100ms  | Low ⭐           | Medium      |
-| OMZ       | 300-500ms | Very Low         | Low         |
-
-**Current Setup:** ~82ms with Antidote
+**Current Setup:** ~115ms with Antidote (measured with `time zsh -i -c exit`)
