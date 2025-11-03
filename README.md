@@ -156,6 +156,11 @@ exec zsh  # Clean reload (recommended)
 ### Measure Startup Time
 
 ```zsh
+# Using the benchmark utility (recommended - averages multiple runs)
+zbench          # Default: 5 runs
+zbench 10       # Custom: 10 runs
+
+# Or manually with time command
 time zsh -i -c exit
 ```
 
@@ -165,6 +170,7 @@ time zsh -i -c exit
 
 Files in `~/.zsh/plugins/` provide plugin-specific settings:
 
+- **`benchmark.zsh`** - Measure shell startup time with `zbench [runs]` (default: 5 runs)
 - **`completion.zsh`** - Tab completion styling, menu selection, fuzzy matching, case-insensitive completion
 - **`crun.zsh`** - Compile and run C files with `crun file.c` (outputs to `./out/`)
 - **`pg.zsh`** - PostgreSQL service control with `pg start|stop|status`
