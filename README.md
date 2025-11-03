@@ -6,7 +6,7 @@ Modular Zsh setup supporting multiple plugin managers with optimized performance
 
 ```bash
 # Clone this repo
-git clone https://github.com/YOUR_USERNAME/zsh-config.git ~/.zsh
+git clone https://github.com/manemajef/zsh-setup.git ~/.zsh
 
 # Copy example secrets file and edit it
 cp ~/.zsh/secret.zsh.example ~/.zsh/secret.zsh
