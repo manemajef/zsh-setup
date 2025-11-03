@@ -1,3 +1,4 @@
+
 # --- Completion Styling ---
 # Enable menu selection for tab completion
 zstyle ':completion:*' menu select
