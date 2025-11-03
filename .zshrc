@@ -5,23 +5,18 @@
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
 export PATH="$HOME/Library/Python/3.13/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/Applications/PyCharm.app/Contents/MacOS"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/Applications/LibreOffice.app/Contents/Macos"
-source "$HOME/.config/broot/launcher/bash/br"
-
-# --- Initialize completion system --------------------------------------------
-
-# =========================
-# FRAMEWORKS
-# =========================
-
+# source "$HOME/.config/broot/launcher/bash/br"
+export EDITOR="nvim"
+export VISUAL="nvim"
 # ZINIT
 # source ~/.zsh/frameworks/zinit.zsh
 
@@ -40,19 +35,15 @@ if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
 else
   compinit -C
 fi
-# =======================
-# PROMPOTs
-# ======================
 
 # starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # =======================
 # load .zsh
 # =======================
 for file in ~/.zsh/*.zsh; do
-  # Skip frameworks directory as it's already loaded above
-  [[ "$file" == *"/frameworks/"* ]] && continue
+  # [[ "$file" == *"/frameworks/"* ]] && continue
   source "$file"
 done
 
@@ -65,3 +56,4 @@ typeset -U path
 export PATH
 
 # zprof
+export PATH="$HOME/Library/Python/3.13/bin:$PATH"

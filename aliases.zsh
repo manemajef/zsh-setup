@@ -23,9 +23,14 @@ alias cdoc='cd ~/Documents'
 alias ghstconf='cd ~/Library/Application\ Support/com.mitchellh.ghostty && nvim config'
 alias moodle-desk='open ~/Scripts/open-moodle/dist/Moodle\ Desktop.app'
 # alias moodle='cd ~/scripts/open-moodle && /.venv/bin/python3 -m app.main'
-alias moodle='~/Scripts/open-moodle/.venv/bin/python3 ~/Scripts/open-moodle/main.py'
+alias moodle='~/Scripts/moodle/.venv/bin/python3 ~/Scripts/moodle/main.py'
+alias tau='~/Scripts/moodle/.venv/bin/python3 ~/Scripts/moodle/main.py tau'
+# alias tau='~/Scripts/tau/.venv/bin/python3 ~/Scripts/tau/main.py'
 alias semester='open ~/obsidian/TAU'
 hash -d icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 hash -d vault="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
 alias aspace='df -h / | tail -1 | awk "{print \$4}"'
 alias soffice-convert='soffice --headless --convert-to'
+
+alias clean-cache='sudo rm -rf /private/var/folders/*/*/X/*.code_sign_clone'
+alias ltree='lsd --tree'
