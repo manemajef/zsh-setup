@@ -17,8 +17,11 @@ source "$zsh_plugins_zsh"
 
 # --- Optimized compinit with daily caching ---
 # Only rebuild completion cache once per day for faster startup
-
-
+export DIRHISTORY_ALT_BINDINGS=true
+export DIRHISTORY_BIND_ARROW_KEYS=false
+# clear the arrow keys
+# bindkey -r '^[[A'
+# bindkey -r '^[[B'
 # --- History Substring Search Key Bindings ---
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

@@ -6,7 +6,7 @@ alias charm="pycharm"
 alias j="zoxide query -i"
 alias zi='cd "$(zoxide query -i)"'
 alias cdi='zoxide query --interactive'
-alias cat='bat'
+# alias cat='bat'
 # alias z='zoxide'
 # Neovim profiles
 alias nvchad="NVIM_APPNAME=nvim.chad nvim"
@@ -34,3 +34,5 @@ alias soffice-convert='soffice --headless --convert-to'
 
 alias clean-cache='sudo rm -rf /private/var/folders/*/*/X/*.code_sign_clone'
 alias ltree='lsd --tree'
+alias TRASH="~/Library/Mobile\ Documents/.Trash"
+alias mtau='python ~/Scripts/mv-tau/main.py'
