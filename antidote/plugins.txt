@@ -7,16 +7,16 @@ belak/zsh-utils path:history
 belak/zsh-utils path:utility
 
 # Essential OMZ (minimal)
-getantidote/use-omz kind:defer
-ohmyzsh/ohmyzsh path:lib/git.zsh kind:defer
-ohmyzsh/ohmyzsh path:lib/termsupport.zsh kind:defer
+# getantidote/use-omz kind:defer
+# ohmyzsh/ohmyzsh path:lib/git.zsh kind:defer
+# ohmyzsh/ohmyzsh path:lib/termsupport.zsh kind:defer
 
 # Plugins (deferred for speed)
 MichaelAquilina/zsh-you-should-use kind:defer
 
 # OMZ Plugins
 ohmyzsh/ohmyzsh path:plugins/git kind:defer
-jeffreytse/zsh-vi-mode kind:defer
+jeffreytse/zsh-vi-mode
 
 
 # Syntax and suggestions (deferred)

@@ -13,6 +13,14 @@ fi
 # Load plugins (static mode for speed)
 source "$zsh_plugins_zsh"
 
-# --- History Substring Search Key Bindings ---
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+
+HISTORY_SUBSTRING_SEARCH_PREFIXED=1
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='none'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='none'
+bindkey '^[[A' history-substring-search-up      # Up arrow
+bindkey '^[[B' history-substring-search-down    # Down arrow
+bindkey '^[OA' history-substring-search-up      # Up arrow (application mode)
+bindkey '^[OB' history-substring-search-down    # Down arrow (application mode)
+
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_STEADY_BLOCK
