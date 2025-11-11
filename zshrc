@@ -13,20 +13,27 @@ autoload -Uz compinit
 
 # ========= uncomment for safer cominitn =========
 
+# if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+#   compinit
+# else
+#   compinit -C
+# fi
+
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
+  zsh-defer compinit
 else
-  compinit -C
+  zsh-defer compinit -C
 fi
+
 # starship
 eval "$(starship init zsh)"
-zsh-defer eval "$(zoxide init zsh)"
 # LOAD CUSTOM CONFIGS
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
 [[ -f ~/.zsh/secret.zsh ]] && source ~/.zsh/secret.zsh
+[[ -f ~/.zsh/eval.zsh ]] && zsh-defer source ~/.zsh/eval.zsh
 
 # Plugin-specific configs (auto-loaded)
 
 for file in ~/.zsh/plugins/*.zsh; do
-  [[ -f "$file" ]] && source "$file"
+  [[ -f "$file" ]] && zsh-defer source "$file"
 done

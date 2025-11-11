@@ -24,12 +24,3 @@ zsh-users/zsh-syntax-highlighting kind:defer
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
 
-# ============== archived ============
-# ohmyzsh/ohmyzsh path:plugins/dirhistory kind:defer
-# mattmc3/zfunctions
-# romkatv/powerlevel10k
-# belak/zsh-utils path:editor
-# ohmyzsh/ohmyzsh path:lib/key-bindings.zsh kind:defer
-# belak/zsh-utils path:prompt
-# belak/zsh-utils path:completion
-# rupa/z kind:defer
