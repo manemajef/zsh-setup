@@ -7,12 +7,12 @@ if ! (( $+functions[zsh-defer] )); then
 fi
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/jeffreytse/zsh-vi-mode" )
-source "$HOME/Library/Caches/antidote/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
 zsh-defer source "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/zdharma-continuum/fast-syntax-highlighting" )
-zsh-defer source "$HOME/Library/Caches/antidote/zdharma-continuum/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/belak/zsh-utils/utility" )
+zsh-defer source "$HOME/Library/Caches/antidote/belak/zsh-utils/utility/utility.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting" )
+zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions" )
 zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-history-substring-search" )

@@ -19,8 +19,8 @@ source "$zsh_plugins_zsh"
 
 # zsh-defer source "$HOME/.zsh/plugins/keybinds.zsh"
 
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_STEADY_BLOCK
+# ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+# ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_STEADY_BLOCK
 # for cmd in glow rich bat; do
 #   zstyle ":completion:*:*:${cmd}:*" tag-order files directories
 #   zstyle ":completion:*:*:${cmd}:*" file-patterns '*(-/):directories' '*:all-files'

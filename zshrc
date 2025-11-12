@@ -17,7 +17,9 @@ else
   zsh-defer compinit -C
 fi
 
-
+# use vim mode
+bindkey -v
+export KEYTIMEOUT=1
 # ========= uncomment for safer cominitn =========
 
 # if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
@@ -37,3 +39,4 @@ fi
 for file in ~/.zsh/plugins/*.zsh; do
   [[ -f "$file" ]] && zsh-defer source "$file"
 done
+# zsh-defer ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
