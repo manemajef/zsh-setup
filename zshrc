@@ -1,14 +1,19 @@
 # PLUGIN FRAMEWORK
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
-
 source ~/.zsh/antidote/antidote.zsh
+if [[ $- == *i* ]]; then
+  autoload -Uz promptinit
+  promptinit
+  prompt pure
+fi
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # fpath=("$HOME/.local/share/zsh/completions" $fpath)
 autoload -Uz compinit
+source "$HOME/.zsh/plugins/vi-mode.zsh"
 
 # ======= comment out for safer compoinit========
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
@@ -39,4 +44,3 @@ export KEYTIMEOUT=1
 for file in ~/.zsh/plugins/*.zsh; do
   [[ -f "$file" ]] && zsh-defer source "$file"
 done
-# zsh-defer ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
