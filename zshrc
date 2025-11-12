@@ -4,6 +4,9 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 source ~/.zsh/antidote/antidote.zsh
 
+autoload -U promptinit; promptinit
+prompt pure
+
 # fpath=("$HOME/.local/share/zsh/completions" $fpath)
 autoload -Uz compinit
 
@@ -14,6 +17,7 @@ else
   zsh-defer compinit -C
 fi
 
+
 # ========= uncomment for safer cominitn =========
 
 # if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
@@ -22,7 +26,7 @@ fi
 #   compinit -C
 # fi
 # starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 # LOAD CUSTOM CONFIGS
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
 [[ -f ~/.zsh/secret.zsh ]] && source ~/.zsh/secret.zsh

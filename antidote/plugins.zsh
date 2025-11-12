@@ -1,20 +1,16 @@
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
 source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-completions/src" )
-fpath+=( "$HOME/Library/Caches/antidote/belak/zsh-utils/history" )
-source "$HOME/Library/Caches/antidote/belak/zsh-utils/history/history.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/belak/zsh-utils/utility" )
-source "$HOME/Library/Caches/antidote/belak/zsh-utils/utility/utility.plugin.zsh"
 if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
-fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
-zsh-defer source "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/jeffreytse/zsh-vi-mode" )
 source "$HOME/Library/Caches/antidote/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
+zsh-defer source "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zdharma-continuum/fast-syntax-highlighting" )
 zsh-defer source "$HOME/Library/Caches/antidote/zdharma-continuum/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions" )
