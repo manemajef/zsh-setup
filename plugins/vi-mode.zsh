@@ -1,3 +1,6 @@
+
+bindkey -v
+export KEYTIMEOUT=1
 function zle-keymap-select {
   case $KEYMAP in
     vicmd)     printf "\e[1 q" ;;  # block cursor in NORMAL mode

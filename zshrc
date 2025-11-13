@@ -1,19 +1,28 @@
 # PLUGIN FRAMEWORK
-
+# fpath+=("/opt/homebrew/share/zsh/site-functions")
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 source ~/.zsh/antidote/antidote.zsh
-if [[ $- == *i* ]]; then
-  autoload -Uz promptinit
-  promptinit
-  prompt pure
-fi
+# if [[ $- == *i* ]]; then
+#   autoload -Uz promptinit
+#   promptinit
+#   prompt pure
+# fi
+# Load Pure when running inside a real terminal (includes LazyVim)
+# if [[ -t 1 ]]; then
+#   autoload -Uz promptinit
+#   promptinit
+#   prompt pure
+# fi
+autoload -Uz promptinit
+promptinit
+prompt pure
 
 # autoload -U promptinit; promptinit
 # prompt pure
 
 # fpath=("$HOME/.local/share/zsh/completions" $fpath)
 autoload -Uz compinit
-source "$HOME/.zsh/plugins/vi-mode.zsh"
+# source "$HOME/.zsh/plugins/vi-mode.zsh"
 
 # ======= comment out for safer compoinit========
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
@@ -22,8 +31,11 @@ else
   zsh-defer compinit -C
 fi
 
+if [[ $- == *i* ]]; then
+  printf "\e[5 q"  # force insert-mode bar until plugin loads
+fi
 # use vim mode
-bindkey -v
+# bindkey -v
 export KEYTIMEOUT=1
 # ========= uncomment for safer cominitn =========
 
