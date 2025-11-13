@@ -8,7 +8,7 @@ zbench() {
 
   for i in {1..$runs}; do
     local time_output=$(command time -p zsh -i -c exit 2>&1)
-    local real_time=$(echo "$time_output" | grep '^real' | awk '{print $2}')
+    local real_time=$(echo "$time_output" | grep 'real' | awk '{print $NF}')
     local ms=$(echo "$real_time * 1000" | bc)
     results+=($ms)
     total=$(echo "$total + $ms" | bc)
