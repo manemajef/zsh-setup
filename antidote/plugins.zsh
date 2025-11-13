@@ -6,6 +6,8 @@ if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
+fpath+=( "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode" )
+zsh-defer source "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )

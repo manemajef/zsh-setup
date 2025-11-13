@@ -2,7 +2,7 @@
 romkatv/zsh-defer
 zsh-users/zsh-completions kind:fpath path:src
 sindresorhus/pure kind:fpath
-
+softmoth/zsh-vim-mode kind:defer
 
 
 ohmyzsh/ohmyzsh path:plugins/git kind:defer

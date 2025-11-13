@@ -36,7 +36,7 @@ if [[ $- == *i* ]]; then
 fi
 # use vim mode
 # bindkey -v
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=1
 # ========= uncomment for safer cominitn =========
 
 # if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
@@ -52,6 +52,7 @@ export KEYTIMEOUT=1
 [[ -f ~/.zsh/eval.zsh ]] && zsh-defer source ~/.zsh/eval.zsh
 
 # Plugin-specific configs (auto-loaded)
+export KEYTIMEOUT=1
 
 for file in ~/.zsh/plugins/*.zsh; do
   [[ -f "$file" ]] && zsh-defer source "$file"
