@@ -1,11 +1,12 @@
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
 source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-completions/src" )
-fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
 if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
+fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
+zsh-defer source "$HOME/Library/Caches/antidote/sindresorhus/pure/pure.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
