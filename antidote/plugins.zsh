@@ -1,12 +1,12 @@
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
 source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
-fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color" )
-source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color/color.plugin.zsh"
 if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
+fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color" )
+zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color/color.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/completion" )
 zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/completion/completion.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/compstyle" )
