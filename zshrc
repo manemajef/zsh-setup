@@ -1,36 +1,21 @@
 # PLUGIN FRAMEWORK
-# fpath+=("/opt/homebrew/share/zsh/site-functions")
+
+# printf '\e[5 q'
+[[ -o INTERACTIVE ]] && printf '\e[5 q'
+
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 source ~/.zsh/antidote/antidote.zsh
-autoload -Uz promptinit
 
+# Set cursor to bar (insert mode) immediately before anything else loads
+
+autoload -Uz promptinit
 promptinit
 prompt pure
 
-MODE_CURSOR_VICMD="blinking block"
-MODE_CURSOR_VIINS="blinking bar"
-# autoload -U promptinit; promptinit
-# prompt pure
 
 # fpath=("$HOME/.local/share/zsh/completions" $fpath)
 autoload -Uz compinit
-# source "$HOME/.zsh/plugins/vi-mode.zsh"
-
-# ======= comment out for safer compoinit========
-# if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-#   zsh-defer compinit
-# else
-#   zsh-defer compinit -C
-# fi
-
-# if [[ $- == *i* ]]; then
-#   printf "\e[5 q"  # force insert-mode bar until plugin loads
-# fi
-# use vim mode
-# bindkey -v
-# export KEYTIMEOUT=1
-# ========= uncomment for safer cominitn =========
 
 # if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
 #   compinit
