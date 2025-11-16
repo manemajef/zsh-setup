@@ -1,7 +1,8 @@
 
 # Core helpers (must load early)
 romkatv/zsh-defer
-sindresorhus/pure kind:fpath
+mattmc3/prompt path:plugins/prompt
+# sindresorhus/pure kind:fpath kind:defer
 mattmc3/zephyr path:plugins/color kind:defer
 mattmc3/zephyr path:plugins/completion kind:defer 
 mattmc3/zephyr path:plugins/compstyle kind:defer

@@ -26,3 +26,4 @@ alias ltree='lsd --tree'
 alias TRASH="~/Library/Mobile\ Documents/.Trash"
 alias mtau='python ~/Scripts/mv-tau/main.py'
 alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
+alias cd='z'

@@ -1,6 +1,5 @@
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
 source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
 if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
