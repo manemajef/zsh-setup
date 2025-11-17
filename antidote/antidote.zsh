@@ -13,6 +13,8 @@ if [[ ! -e "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" ]]; t
 fi
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
+ANTIDOTE_TIMING=1
+
 # Load plugins (static mode for speed)
 source "$zsh_plugins_zsh"
 

@@ -27,3 +27,5 @@ alias TRASH="~/Library/Mobile\ Documents/.Trash"
 alias mtau='python ~/Scripts/mv-tau/main.py'
 alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
 alias cd='z'
+alias zprof='ZSH_PROFILE=1 zsh -l'
+
