@@ -29,3 +29,8 @@ alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
 alias cd='z'
 alias zprof='ZSH_PROFILE=1 zsh -l'
 
+# vims
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'
+alias rawvim='NVIM_APPNAME=rawvim nvim'
+alias kickvim='NVIM_APPNAME=kickvim nvim'
+

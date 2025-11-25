@@ -16,6 +16,8 @@ _zbench_strip_control_sequences() {
 
 # Benchmark zsh startup time
 zbench() {
+  setopt localoptions
+  unsetopt xtrace
   local runs=${1:-5}
   local total=0
   local completed=0
@@ -77,6 +79,8 @@ zbench() {
 # This is useful for catching stray escape sequences such as cursor-shape
 # prints inside ~/.zshrc that would otherwise corrupt /usr/bin/time output.
 zbench_strict() {
+  setopt localoptions
+  unsetopt xtrace
   local runs=${1:-5}
   local total=0
   local completed=0
@@ -138,6 +142,8 @@ zbench_strict() {
 # 📊 Pro Zsh Startup Benchmark Suite
 zbench_pro() {
   emulate -L zsh
+  setopt localoptions
+  unsetopt xtrace
   local runs=${1:-5}
   local tmpfile=$(mktemp)
   local times=()
@@ -222,6 +228,8 @@ zbench_pro() {
 
 # 🔍 Profile zsh startup to identify bottlenecks
 pbench() {
+  setopt localoptions
+  unsetopt xtrace
   local tmpfile=$(mktemp)
 
   cat > "$tmpfile" << 'EOF'

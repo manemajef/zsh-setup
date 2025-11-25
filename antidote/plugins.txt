@@ -1,13 +1,16 @@
 
 # Core helpers (must load early)
 
-romkatv/zsh-defer
+
 sindresorhus/pure
+romkatv/zsh-defer
 mattmc3/zephyr path:plugins/color kind:defer
-mattmc3/zephyr path:plugins/completion kind:defer 
-mattmc3/zephyr path:plugins/compstyle kind:defer
+# mattmc3/zephyr path:plugins/completion kind:defer 
+# mattmc3/zephyr path:plugins/compstyle kind:defer
 mattmc3/zephyr path:plugins/directory kind:defer
 softmoth/zsh-vim-mode kind:defer
+z-shell/zsh-fancy-completions kind:defer
+z-shell/zsh-navigation-tools kind:defer
 
 
 
@@ -15,6 +18,7 @@ softmoth/zsh-vim-mode kind:defer
 ohmyzsh/ohmyzsh path:plugins/git kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
 belak/zsh-utils path:utility kind:defer
+
 
 # ================ PLUGINS FOR FISH BEHAVIOUR===========#
 zsh-users/zsh-syntax-highlighting kind:defer
