@@ -1,2 +1,2 @@
 eval "$(zoxide init zsh)"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"

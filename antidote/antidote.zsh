@@ -1,4 +1,5 @@
 
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 # Antidote handles loading plugins and completions
 # source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
