@@ -2,20 +2,21 @@ fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
 source "$HOME/Library/Caches/antidote/sindresorhus/pure/pure.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
 source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
+export PATH="$HOME/Library/Caches/antidote/romkatv/zsh-bench:$PATH"
 if ! (( $+functions[zsh-defer] )); then
   fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
   source "$HOME/Library/Caches/antidote/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color" )
 zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color/color.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/mattmc3/ez-compinit" )
+source "$HOME/Library/Caches/antidote/mattmc3/ez-compinit/ez-compinit.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/directory" )
 zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/directory/directory.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode" )
 zsh-defer source "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/z-shell/zsh-fancy-completions" )
 zsh-defer source "$HOME/Library/Caches/antidote/z-shell/zsh-fancy-completions/zsh-fancy-completions.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/z-shell/zsh-navigation-tools" )
-zsh-defer source "$HOME/Library/Caches/antidote/z-shell/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )

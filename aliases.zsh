@@ -25,7 +25,7 @@ alias clean-cache='sudo rm -rf /private/var/folders/*/*/X/*.code_sign_clone'
 alias ltree='lsd --tree'
 alias TRASH="~/Library/Mobile\ Documents/.Trash"
 alias mtau='python ~/Scripts/mv-tau/main.py'
-alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
+# alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
 alias cd='z'
 alias zprof='ZSH_PROFILE=1 zsh -l'
 

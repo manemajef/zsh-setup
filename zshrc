@@ -4,9 +4,9 @@ source ~/.zsh/antidote/antidote.zsh
 # Set cursor to bar (insert mode) immediately before anything else loads
 [[ -o INTERACTIVE ]] && printf '\e[5 q'
 
-
+ZFUNCDIR=~/.zsh/functions
 # general settings
-autoload -Uz compinit
+# autoload -Uz compinit
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"

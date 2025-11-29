@@ -1,8 +1,8 @@
 path_list=(
-#   "$HOME/.pyenv/shims"
+  "$HOME/.local/bin"
+  "$HOME/.pyenv/shims"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
-  "$HOME/.local/bin"
   "$HOME/.cargo/bin"
   "/Library/TeX/texbin"
 )
