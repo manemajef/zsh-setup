@@ -34,3 +34,4 @@ alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 alias rawvim='NVIM_APPNAME=rawvim nvim'
 alias kickvim='NVIM_APPNAME=kickvim nvim'
 
+alias r='radian'
