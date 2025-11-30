@@ -6,6 +6,7 @@ source ~/.zsh/antidote/antidote.zsh
 
 ZFUNCDIR=~/.zsh/functions
 # general settings
+
 # autoload -Uz compinit
 export KEYTIMEOUT=1
 export EDITOR="nvim"
