@@ -1,3 +1,5 @@
+fpath+=( "$HOME/Library/Caches/antidote/mattmc3/ez-compinit" )
+source "$HOME/Library/Caches/antidote/mattmc3/ez-compinit/ez-compinit.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/sindresorhus/pure" )
 source "$HOME/Library/Caches/antidote/sindresorhus/pure/pure.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/romkatv/zsh-defer" )
@@ -9,8 +11,6 @@ if ! (( $+functions[zsh-defer] )); then
 fi
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color" )
 zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/color/color.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/mattmc3/ez-compinit" )
-source "$HOME/Library/Caches/antidote/mattmc3/ez-compinit/ez-compinit.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/directory" )
 zsh-defer source "$HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/directory/directory.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode" )
@@ -23,9 +23,9 @@ fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
 zsh-defer source "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/belak/zsh-utils/utility" )
 zsh-defer source "$HOME/Library/Caches/antidote/belak/zsh-utils/utility/utility.plugin.zsh"
-fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting" )
-zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions" )
 zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-history-substring-search" )
 zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting" )
+zsh-defer source "$HOME/Library/Caches/antidote/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
