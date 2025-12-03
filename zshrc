@@ -4,14 +4,13 @@ source ~/.zsh/antidote/antidote.zsh
 # Set cursor to bar (insert mode) immediately before anything else loads
 [[ -o INTERACTIVE ]] && printf '\e[5 q'
 
-ZFUNCDIR=~/.zsh/functions
 # general settings
 
 # autoload -Uz compinit
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
-
+# setopt always_last_prompt
 # starship
 # eval "$(starship init zsh)"
 
@@ -33,3 +32,7 @@ done
 for file in ~/.zsh/plugins/*.zsh; do
   [[ -f "$file" ]] && zsh-defer source "$file"
 done
+# Force inline ephemeral menu for all completions
+# zstyle ':completion:*' menu yes select
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# setopt always_last_prompt
