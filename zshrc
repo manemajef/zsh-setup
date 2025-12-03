@@ -1,4 +1,4 @@
-# set antidote
+# source ~/.zsh/omz/omz.zsh
 source ~/.zsh/antidote/antidote.zsh
 
 # Set cursor to bar (insert mode) immediately before anything else loads
