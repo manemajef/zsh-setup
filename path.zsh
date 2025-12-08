@@ -1,6 +1,12 @@
+
+export PNPM_HOME="/Users/rotemsemah/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 path_list=(
 
-  "$HOME/.pyenv/shims"
+  # "$HOME/.pyenv/shims"
   "$HOME/.local/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
