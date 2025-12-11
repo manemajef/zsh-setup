@@ -3,4 +3,3 @@ copykatex() {
   echo "✓ Copied KaTeX fix snippet to clipboard"
 }
 
-
