@@ -3,7 +3,7 @@
 # FRAMEWORK="omz"
 FRAMEWORK="antidote"
 
-[[ -z "$FRAMEWORK" ]] && FRAMEWORK="antidote"
+
 source "$HOME/.zsh/$FRAMEWORK/$FRAMEWORK.zsh"
 
 # source ~/.zsh/antidote/antidote.zsh
