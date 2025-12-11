@@ -21,6 +21,6 @@ source "$zsh_plugins_zsh"
 # [[ -f ~/.zsh/eval.zsh ]] && zsh-defer source ~/.zsh/eval.zsh
 # Plugin-specific configs (auto-loaded)
 
-for file in ~/.zsh/plugins/*.zsh; do
+for file in ~/.zsh/antidote/config/*.zsh; do
   [[ -f "$file" ]] && zsh-defer source "$file"
 done

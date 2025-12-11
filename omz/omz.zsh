@@ -9,7 +9,6 @@ plugins=(
   colored-man-pages
   macos
   copypath
-  dirhistory
 )
 
 source $ZSH/oh-my-zsh.sh

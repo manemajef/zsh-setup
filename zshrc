@@ -1,11 +1,12 @@
+# blinkon cursor on interactive shells
 [[ -o INTERACTIVE ]] && printf '\e[5 q'
 
 # general settings
-
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# source files
 files=(
   "$HOME/.zsh/path.zsh"
   "$HOME/.zsh/aliases.zsh"
@@ -16,10 +17,12 @@ files=(
 for f in "${files[@]}"; do
   [[ -f "$f" ]] && source "$f"
 done
-# [[ -f ~/.zsh/eval.zsh ]] && source ~/.zsh/eval.zsh
 
+for f in "$HOME/.zsh/plugins"/*.zsh; do
+  [[ -f "$f" ]] && source "$f"
+done 
 
-
+# Dynamic Framework picker
 local DEFAULT_FRAMEWORK="antidote"
 local FRAMEWORK_NAME="${FRAMEWORK:-$DEFAULT_FRAMEWORK}"
 local f_script="$HOME/.zsh/${FRAMEWORK_NAME}/${FRAMEWORK_NAME}.zsh"
@@ -31,3 +34,4 @@ else
 fi
 unset DEFAULT_FRAMEWORK FRAMEWORK_NAME f_script
 
+## Add more stuff here.
