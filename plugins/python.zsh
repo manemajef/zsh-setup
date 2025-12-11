@@ -1,5 +1,5 @@
+active=false
 has_venv=false
-
 python_venv() {
   local myvenv="./.venv"
 
@@ -15,11 +15,9 @@ python_venv() {
     fi
   fi
 }
+if (( active )); then
+  autoload -U add-zsh-hook
+  add-zsh-hook chpwd python_venv
+  python_venv
+fi
 
-autoload -U add-zsh-hook
-add-zsh-hook chpwd python_venv
-python_venv
-
-
-  # [[ -d "$myvenv" ]] && source "$myvenv/bin/activate" > /dev/null 2>&1
-  # [[ ! -d "$myvenv" ]] && deactivate > /dev/null 2>&1 || true

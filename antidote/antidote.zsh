@@ -17,3 +17,10 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 ANTIDOTE_TIMING=1
 
 source "$zsh_plugins_zsh"
+
+# [[ -f ~/.zsh/eval.zsh ]] && zsh-defer source ~/.zsh/eval.zsh
+# Plugin-specific configs (auto-loaded)
+
+for file in ~/.zsh/plugins/*.zsh; do
+  [[ -f "$file" ]] && zsh-defer source "$file"
+done

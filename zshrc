@@ -1,5 +1,12 @@
 # source ~/.zsh/omz/omz.zsh
-source ~/.zsh/antidote/antidote.zsh
+# FRAMEWORK="zinit"
+# FRAMEWORK="omz"
+FRAMEWORK="antidote"
+
+[[ -z "$FRAMEWORK" ]] && FRAMEWORK="antidote"
+source "$HOME/.zsh/$FRAMEWORK/$FRAMEWORK.zsh"
+
+# source ~/.zsh/antidote/antidote.zsh
 
 # Set cursor to bar (insert mode) immediately before anything else loads
 [[ -o INTERACTIVE ]] && printf '\e[5 q'
@@ -24,15 +31,12 @@ files=(
 for f in "${files[@]}"; do
   [[ -f "$f" ]] && source "$f"
 done
+[[ -f ~/.zsh/eval.zsh ]] && source ~/.zsh/eval.zsh
+
 # [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
 # [[ -f ~/.zsh/secret.zsh ]] && source ~/.zsh/secret.zsh
-[[ -f ~/.zsh/eval.zsh ]] && zsh-defer source ~/.zsh/eval.zsh
-# Plugin-specific configs (auto-loaded)
-
-for file in ~/.zsh/plugins/*.zsh; do
-  [[ -f "$file" ]] && zsh-defer source "$file"
-done
 # Force inline ephemeral menu for all completions
 # zstyle ':completion:*' menu yes select
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # setopt always_last_prompt
+# eval "$(starship init zsh)"

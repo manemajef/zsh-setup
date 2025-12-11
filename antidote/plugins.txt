@@ -3,16 +3,13 @@ sindresorhus/pure
 romkatv/zsh-defer
 romkatv/zsh-bench kind:path
 
-
-# Aloxaf/fzf-tab
 mattmc3/zephyr path:plugins/completion kind:defer
-# mattmc3/zephyr path:plugins/color kind:defer
 mattmc3/zephyr path:plugins/directory kind:defer
 softmoth/zsh-vim-mode kind:defer
 
 # z-shell/zsh-fancy-completions kind:defer
-
-
+# Aloxaf/fzf-tab
+# mattmc3/zephyr path:plugins/color kind:defer
 # z-shell/zsh-navigation-tools kind:defer
 # mattmc3/zephyr path:plugins/completion kind:defer 
 # mattmc3/zephyr path:plugins/compstyle kind:defer
