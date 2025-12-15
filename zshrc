@@ -34,4 +34,10 @@ else
 fi
 unset DEFAULT_FRAMEWORK FRAMEWORK_NAME f_script
 
-## Add more stuff here.
+## Add more stuff here
+
+setopt extendedglob
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_HINTS=1
+
+

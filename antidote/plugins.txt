@@ -15,6 +15,7 @@ softmoth/zsh-vim-mode kind:defer
 # mattmc3/zephyr path:plugins/compstyle kind:defer
 
 ohmyzsh/ohmyzsh path:plugins/git kind:defer
+ohmyzsh/ohmyzsh path:plugins/directory kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
 belak/zsh-utils path:utility kind:defer
 
