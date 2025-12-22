@@ -6,6 +6,10 @@ export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Autoload functions
+fpath=($HOME/.zsh/functions $fpath)
+autoload -Uz $HOME/.zsh/functions/*(:t)
+
 # source files
 files=(
   "$HOME/.zsh/path.zsh"
