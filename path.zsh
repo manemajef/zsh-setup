@@ -12,7 +12,9 @@ path_list=(
   "/opt/homebrew/sbin"
   "$HOME/.cargo/bin"
   "/Library/TeX/texbin"
-  "/Applications/PyCharm.app/Contents/MacOS"
+  "/Applications/PyCharm.app/Contents/MacOS",
+  "/Users/rotemsemah/.antigravity/antigravity"
+
 )
 
 costum_path=$(IFS=:; echo "${path_list[*]}")
