@@ -16,6 +16,7 @@ files=(
   "$HOME/.zsh/aliases.zsh"
   "$HOME/.zsh/secret.zsh"
   "$HOME/.zsh/eval.zsh"
+  "$HOME/.zsh/lib/secret.zsh"
 )
 
 for f in "${files[@]}"; do
@@ -30,6 +31,11 @@ done
 local DEFAULT_FRAMEWORK="antidote"
 local FRAMEWORK_NAME="${FRAMEWORK:-$DEFAULT_FRAMEWORK}"
 local f_script="$HOME/.zsh/${FRAMEWORK_NAME}/${FRAMEWORK_NAME}.zsh"
+
+# If not found in root, check frameworks/
+if [[ ! -f "$f_script" ]]; then
+  f_script="$HOME/.zsh/frameworks/${FRAMEWORK_NAME}/${FRAMEWORK_NAME}.zsh"
+fi
 
 if [[ -f "$f_script" ]]; then
   source "$f_script"

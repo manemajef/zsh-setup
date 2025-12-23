@@ -1,0 +1,39 @@
+local dirs=(
+        "$HOME/Library/LaunchAgents"
+        "/Library/LaunchAgents"
+        "/Library/LaunchDaemons"
+    )
+
+    # Colors for readability
+    local RED='\033[0;31m'
+    local BLUE='\033[0;34m'
+    local BOLD='\033[1m'
+    local NC='\033[0m' # No Color
+
+    echo "${BOLD}--- Scanning for Non-Apple Persistence Files ---${NC}\n"
+
+    for dir in $dirs; do
+        if [[ -d "$dir" ]]; then
+            echo "${BLUE}Checking: $dir${NC}"
+            
+            # 2. List files, grep to remove "com.apple", and check if list is empty
+            # -G: colorizes grep output
+            # -v: inverts match (shows everything that does NOT match com.apple)
+            local results=$(ls -1 "$dir"/*.plist 2>/dev/null | grep -v "com.apple" | grep -v "E285")
+            
+            if [[ -n "$results" ]]; then
+                echo "$results" | while read -r line; do
+                    # Print the filename in red
+                    echo "  ${RED}Found:${NC} $(basename "$line")" 
+                done
+            else
+                echo "  (Clean - No non-Apple files found)"
+            fi
+            echo ""
+        fi
+    done
+
+    echo "${BOLD}--- Checking Active User Processes (launchctl) ---${NC}"
+    # 3. Check what is actually RUNNING right now
+    # We skip standard system processes to see 3rd party stuff
+    launchctl list | grep -v "com.apple" | grep -v "application." | awk '{print "  " $3}' | grep -v "^-$"
