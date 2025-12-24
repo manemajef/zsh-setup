@@ -15,6 +15,8 @@ fpath+=( "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode" )
 zsh-defer source "$HOME/Library/Caches/antidote/softmoth/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh"
+fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/direnv" )
+zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/direnv/direnv.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/directory" )
 zsh-defer source "$HOME/Library/Caches/antidote/ohmyzsh/ohmyzsh/plugins/directory/directory.plugin.zsh"
 fpath+=( "$HOME/Library/Caches/antidote/MichaelAquilina/zsh-you-should-use" )
