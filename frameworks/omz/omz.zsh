@@ -9,6 +9,10 @@ plugins=(
   colored-man-pages
   macos
   copypath
+  direnv
+  eza
+  history-substring-search
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh

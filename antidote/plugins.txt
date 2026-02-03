@@ -32,3 +32,4 @@ zsh-users/zsh-syntax-highlighting kind:defer
 # z-shell/zsh-navigation-tools kind:defer
 # mattmc3/zephyr path:plugins/completion kind:defer 
 # mattmc3/zephyr path:plugins/compstyle kind:defer
+# mattmc3/zephyr path:plugins/prompt

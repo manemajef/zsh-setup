@@ -27,6 +27,7 @@ for f in "$HOME/.zsh/plugins"/*.zsh; do
   [[ -f "$f" ]] && source "$f"
 done 
 
+# FRAMEWORK='omz'
 # Dynamic Framework picker
 local DEFAULT_FRAMEWORK="antidote"
 local FRAMEWORK_NAME="${FRAMEWORK:-$DEFAULT_FRAMEWORK}"

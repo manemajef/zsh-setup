@@ -1,6 +1,6 @@
 # alias python="python3"
 # alias pip="pip3"
-alias charm="pycharm"
+alias charm="open -a PyCharm"
 # Zoxide interactive jumpers
 alias ls="eza"
 alias j="zoxide query -i"
@@ -26,7 +26,7 @@ alias ltree='lsd --tree'
 alias TRASH="~/Library/Mobile\ Documents/.Trash"
 alias mtau='python ~/Scripts/mv-tau/main.py'
 # alias zsh-bench='~/Scripts/zsh-bench/zsh-bench'
-alias cd='z'
+# alias cd='z'
 alias zprof='ZSH_PROFILE=1 zsh -l'
 
 # vims
@@ -35,3 +35,7 @@ alias rawvim='NVIM_APPNAME=rawvim nvim'
 alias kickvim='NVIM_APPNAME=kickvim nvim'
 
 alias r='radian'
+export ipaddr="192.168.1.117"
+alias kill-marimo='pkill -f marimo._ipc.launch_kernel'
+alias cldr='claude --dangerously-skip-permissions'
+alias tmptex='cat ~/admin/templates/he.tex | pbcopy'
