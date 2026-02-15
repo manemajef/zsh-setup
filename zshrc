@@ -5,10 +5,11 @@
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
+export TMPS_DIR="/Users/rotemsemah/admin/templates"
 
 # Autoload functions
 fpath=($HOME/.zsh/functions $fpath)
-autoload -Uz $HOME/.zsh/functions/*(:t)
+autoload -Uz $HOME/.zsh/functions/*(N:t)
 
 # source files
 files=(

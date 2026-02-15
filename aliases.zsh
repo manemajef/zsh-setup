@@ -39,3 +39,7 @@ export ipaddr="192.168.1.117"
 alias kill-marimo='pkill -f marimo._ipc.launch_kernel'
 alias cldr='claude --dangerously-skip-permissions'
 alias tmptex='cat ~/admin/templates/he.tex | pbcopy'
+alias gmdev='gco main && g merge dev && gco dev'
+alias cptex="cat ~/admin/templates/he-header.tex | pbcopy"
+alias texify="~/scripts/md2tex/run-md2tex"
+alias skim="open -a Skim"

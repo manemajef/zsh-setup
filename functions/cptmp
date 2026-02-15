@@ -1,0 +1,11 @@
+#autoload
+cptmp() {
+  local file="$TMPS_DIR/$1"
+
+  [[ -f "$file" ]] || {
+    echo "File not found: $file"
+    return 1
+  }
+
+  pbcopy < "$file"
+}

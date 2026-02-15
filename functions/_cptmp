@@ -1,0 +1,3 @@
+#autoload
+
+_arguments '1:tmp file:_files -W "$TMPS_DIR"'
