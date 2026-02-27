@@ -1,3 +1,12 @@
-#autoload
+#compdef cptmp
 
-_arguments '1:tmp file:_files -W "$TMPS_DIR"'
+local -a tmp_files
+local f enc
+
+for f in "$TMPS_DIR"/*(N-.); do
+  enc="$(file -Lb --mime-encoding -- "$f" 2>/dev/null)"
+  [[ "$enc" == "binary" ]] && continue
+  tmp_files+=("${f:t}")
+done
+
+_describe -t tmp-files "tmp file" tmp_files

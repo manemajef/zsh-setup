@@ -61,6 +61,7 @@ exec zsh
 ├── antidote/
 │   ├── plugins.txt      # Plugin list (edit this)
 │   └── plugins.zsh      # Generated bundle
+├── functions/           # Custom funcs + completions (_name)
 ├── plugins/             # Custom configs
 └── aliases.zsh          # Your aliases
 ```

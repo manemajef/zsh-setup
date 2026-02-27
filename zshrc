@@ -7,9 +7,14 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export TMPS_DIR="/Users/rotemsemah/admin/templates"
 
-# Autoload functions
-fpath=($HOME/.zsh/functions $fpath)
-autoload -Uz $HOME/.zsh/functions/*(N:t)
+# Local functions + completions (flat layout)
+# - functions: ~/.zsh/functions/<name>
+# - completions: ~/.zsh/functions/_<name>
+fpath=("$HOME/.zsh/functions" $fpath)
+for fn in "$HOME/.zsh/functions"/*(N:t); do
+  [[ "$fn" == _* ]] && continue
+  autoload -Uz "$fn"
+done
 
 # source files
 files=(
@@ -28,28 +33,12 @@ for f in "$HOME/.zsh/plugins"/*.zsh; do
   [[ -f "$f" ]] && source "$f"
 done 
 
-# FRAMEWORK='omz'
-# Dynamic Framework picker
-local DEFAULT_FRAMEWORK="antidote"
-local FRAMEWORK_NAME="${FRAMEWORK:-$DEFAULT_FRAMEWORK}"
-local f_script="$HOME/.zsh/${FRAMEWORK_NAME}/${FRAMEWORK_NAME}.zsh"
-
-# If not found in root, check frameworks/
-if [[ ! -f "$f_script" ]]; then
-  f_script="$HOME/.zsh/frameworks/${FRAMEWORK_NAME}/${FRAMEWORK_NAME}.zsh"
-fi
-
-if [[ -f "$f_script" ]]; then
-  source "$f_script"
-else
-  source "$HOME/.zsh/${DEFAULT_FRAMEWORK}/${DEFAULT_FRAMEWORK}.zsh"
-fi
-unset DEFAULT_FRAMEWORK FRAMEWORK_NAME f_script
+# Framework: antidote only
+source "$HOME/.zsh/antidote/antidote.zsh"
 
 ## Add more stuff here
 
 setopt extendedglob
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
-
 
