@@ -1,12 +1,13 @@
 # Secrets and sensitive data
 secret.zsh
-
+.cache
 # Generated/cache files
 .zcompdump*
 *.zwc
 
 # Plugin manager generated files
 .zsh_plugins.zsh
+.antidote-plugins/
 
 # Archive/backup directories
 archive/

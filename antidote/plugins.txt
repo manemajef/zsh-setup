@@ -18,7 +18,7 @@ belak/zsh-utils path:utility kind:defer
 # ================ PLUGINS FOR FISH BEHAVIOUR===========#
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
-zsh-users/zsh-syntax-highlighting kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
 
 # =============== ARCHIVE ===================#
 # =============== ARCHIVE ===================#

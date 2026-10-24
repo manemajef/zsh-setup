@@ -31,7 +31,7 @@ done
 
 for f in "$HOME/.zsh/plugins"/*.zsh; do
   [[ -f "$f" ]] && source "$f"
-done 
+done
 
 # Framework: antidote only
 source "$HOME/.zsh/antidote/antidote.zsh"
@@ -41,4 +41,3 @@ source "$HOME/.zsh/antidote/antidote.zsh"
 setopt extendedglob
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
-

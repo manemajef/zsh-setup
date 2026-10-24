@@ -5,13 +5,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 path_list=(
-
   # "$HOME/.pyenv/shims"
   "$HOME/.local/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "$HOME/.cargo/bin"
   "/Library/TeX/texbin"
+  "$HOME/scripts"
   "/Applications/PyCharm.app/Contents/MacOS",
   "/Users/rotemsemah/.antigravity/antigravity"
 
